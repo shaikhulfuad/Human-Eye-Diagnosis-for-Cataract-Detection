@@ -24,5 +24,46 @@ Dataset collected from kaggle
 Visualizing retina funduscopy images
 
 ![Screenshot 2022-05-17 205557](https://user-images.githubusercontent.com/54286216/168842481-83d11bd3-1b14-4154-8206-09f065ba384d.png)
+Funduscopic images of left and right eyes with labeling
 
+
+
+
+![2](https://user-images.githubusercontent.com/54286216/168843271-21ddadbe-daaf-4e23-a966-68f23bcb00af.png)
+ A tabular dataset or csv file record which holds the target or label of each victim's retina image accordingly to image folder index
+
+
+
+# Data Pre-processing
+
+   Extracted all the fundus images that carries cataract and conventional fundus photographs, into two phases: the first phase that labels 'N' and the second phase that labels 'C'. Data was filtered using labels, which were assigned to each row. Because they were taken using different cameras, the image sizes of the experimental fundus photos were not consistent. As a consequence, we used OpenCV to resize the image to 224*224 pixels, which was a good fit. The dataset is then loaded and translated into an array format for use in training using the NumPy library, which is then used to store the result.
+   
+  
+  ![3](https://user-images.githubusercontent.com/54286216/168846933-3c54cd17-a40e-4519-a230-3fa2fb28c1d7.png)
+  Total Number of images to be used after processing
+  
+ 
+
+
+# Modelling
+
+Transfer Learning approach(pretrained CNN models)
+
+    weights="imagenet",
+    include_top=False,
+    input_shape=(224,224,3),
+    activation='relu'
+    GlobalAveragePooling2D(),
+    BatchNormalization()
+
+
+INIT_LR = 1e-3
+EPOCHS = 15
+print(" compiling model...")
+opt = Adam(learning_rate=INIT_LR, decay=INIT_LR / EPOCHS)
+model.compile(loss="binary_crossentropy", optimizer=opt,
+              metrics=["accuracy"])
+              
+  batch_size=32,epochs=15
+              
 
