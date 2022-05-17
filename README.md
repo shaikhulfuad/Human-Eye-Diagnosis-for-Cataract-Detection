@@ -85,5 +85,27 @@ EfficientNetV2B0 has the highest number of accuracy. Although it's Loss value ve
 
 
 
+EfficientNetV2B0 model performance graph...
+
+![Screenshot 2022-05-17 233713](https://user-images.githubusercontent.com/54286216/168876016-dc0f1add-8215-4362-ad3c-dde99b05c16a.png)
+
+
+
+EfficientNetV2B0 confusion matrix...
+
+![Screenshot 2022-05-17 233810](https://user-images.githubusercontent.com/54286216/168876076-9355ddb2-617b-4917-8223-49aeec06d26c.png)
+
+
+
+
+Finally the performance of the tested model of EfficientNetV2B0 is saved and used that to make a predictive system or a function to detect any funduscopic retinal image abnormality.
+
+![Screenshot 2022-05-17 233831](https://user-images.githubusercontent.com/54286216/168876726-93d65007-a0bc-40e4-967a-c33a6de41236.png)
+
+
+
+
+
+
 
 
