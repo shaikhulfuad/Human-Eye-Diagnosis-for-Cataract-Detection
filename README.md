@@ -54,16 +54,36 @@ Transfer Learning approach(pretrained CNN models)
     input_shape=(224,224,3),
     activation='relu'
     GlobalAveragePooling2D(),
-    BatchNormalization()
+    BatchNormalization(),
+    activation='sigmoid'
 
 
-INIT_LR = 1e-3
-EPOCHS = 15
-print(" compiling model...")
-opt = Adam(learning_rate=INIT_LR, decay=INIT_LR / EPOCHS)
-model.compile(loss="binary_crossentropy", optimizer=opt,
-              metrics=["accuracy"])
+
+      optimizer = Adam(learning_rate=INIT_LR, decay=INIT_LR / EPOCHS)
+      loss="binary_crossentropy"
+      batch_size=32,
+      epochs=15
               
-  batch_size=32,epochs=15
-              
+      
+      
+# Results & Evaluation
+
+Models performance values
+
+![Screenshot 2022-05-17 231819](https://user-images.githubusercontent.com/54286216/168874341-a4b7de4a-565c-49b2-a613-8c6116ef88a9.png)
+
+Accuracy chart
+
+![Screenshot 2022-05-17 232359](https://user-images.githubusercontent.com/54286216/168874438-69d663bc-d315-4615-a6c3-dc239065a2de.png)
+
+Loss chart
+
+![Screenshot 2022-05-17 232715](https://user-images.githubusercontent.com/54286216/168874483-1ce556d6-8309-4690-abba-51d375628357.png)
+
+
+EfficientNetV2B0 has the highest number of accuracy. Although it's Loss value very slightly greater than MobileNet, but it can be neglected. However, MobileNet's accuracy performance is pretty good but not fine tuned like EfficientNetV2B0. We can come to conclusion that EfficientNetV2B0 is the best model. EfficientNetV2B1 models accuracy performance is similar with MobileNet, but Loss value is twice of it.
+
+
+
+
 
